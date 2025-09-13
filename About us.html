@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Prestige Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #8B0000;
+    }
+
+    p {
+      font-size: 18px;
+      bold
+      color: black;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #fff3f3;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+
+    footer {
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #8B0000;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      display: none;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    }
+
+    #backToTopBtn:hover {
+      background: #a50000;
+    }
+
+    /* Back to Home Button */
+    .home-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #8B0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #a50000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About Us</h1>
+    <p>Welcome to Prestige Restaurant – A Fusion of Cultures & Flavors</p>
+  </header>
+
+  <div class="container">
+    <h2>Who We Are</h2>
+    <p>
+      At Prestige Restaurant, we celebrate diversity through food. Our menu is carefully crafted to bring you
+      the best of **Chinese, Igbo, Hausa, and Yoruba cuisines** – blending tradition, culture, and taste in one place.
+    </p>
+
+   <h2>Our Specialties</h2>
+<ul>
+  <li><strong>Chinese Cuisine:</strong> Savory noodles, dumplings, and stir-fried delights.</li>
+  <li><strong>Igbo Cuisine:</strong> Delicious ofe nsala, abacha, and rich soups.</li>
+  <li><strong>Hausa Cuisine:</strong> Suya, tuwo shinkafa, miyan kuka, and more.</li>
+  <li><strong>Yoruba Cuisine:</strong> Amala, ewedu, gbegiri, and spicy delicacies.</li>
+  <li><strong>European Cuisine:</strong> Classic pasta, grilled meats, fresh salads, and pastries.</li>
+</ul>
+
+    <h2>Our Mission</h2>
+    <p>
+      To serve meals that connect people to their roots while offering a world-class dining experience. 
+      Whether you’re craving Chinese flavors or traditional Nigerian dishes, Prestige Restaurant has something special for you.
+    </p>
+
+    <!-- Back to Home Button -->
+    <a href="main page.html" class="home-btn">← Back to Home</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Prestige Restaurant. All Rights Reserved.
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn">↑</button>
+
+  <script>
+    // Show button when scrolling down
+    window.onscroll = function() {
+      const btn = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    // Smooth scroll to top
+    document.getElementById("backToTopBtn").addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

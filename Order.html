@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Your Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f6f8;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .overlay {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    h4 {
+      margin-top: 35px;
+      font-size: 17px;
+      color: #444;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+
+    li {
+      background-color: #f1f1f1;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .order-btn {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Floating Scroll Button */
+    #scrollBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+
+    #scrollBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <h2>Place Your Order</h2>
+    <form action="https://formspree.io/f/xrbledqr" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="After making your transactions..." required></textarea>
+
+      <button type="submit">Send Order</button>
+    </form>
+
+    <h3>Table Reservation</h3>
+    <form action="https://formspree.io/f/xrbledqr" method="POST">
+      <label for="guestName">Guest Name:</label>
+      <input type="text" id="guestName" name="guestName" placeholder="Enter your full name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" placeholder="e.g. 4" required>
+
+      <label for="date">Reservation Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Reservation Time:</label>
+      <input type="time" id="time" name="time" required>
+
+      <textarea id="specialRequest" name="specialRequest" rows="4" placeholder="Any special requests?"></textarea>
+
+      <button type="submit">Book Reservation</button>
+    </form>
+
+    <h4><strong>Make your payment to the following account and send the receipt to WhatsApp: 09139942148</strong></h4>
+    <ul>
+      <li><strong>Account Number:</strong> 2353812509</li>
+      <li><strong>Name:</strong> Emmanuel Uzor</li>
+      <li><strong>Bank:</strong> UBA</li>
+    </ul>
+
+    <div class="order-btn">
+      <a class="button" href="Main page.html">← Back to Menu</a>
+    </div>
+  </div>
+
+  <!-- Scroll Button -->
+  <button id="scrollBtn">⬇</button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollBtn");
+
+    scrollBtn.addEventListener("click", () => {
+      if (scrollBtn.textContent === "⬇") {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+        scrollBtn.textContent = "⬆"; // At bottom → show up arrow
+      } else {
+        scrollBtn.textContent = "⬇"; // Otherwise → show down arrow
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Hausa Restaurant</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #FCE4EC, #FFF8E1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #4E342E;
+      text-align: center;
+    }
+
+    header {
+      background: #6A1B9A;
+      padding: 15px;
+      color: white;
+      border-radius: 0 0 15px 15px;
+    }
+
+    h1 {
+      color: #5D4037;
+      margin-top: 20px;
+    }
+
+    h2 {
+      color: #fff;
+      background-color: #6A1B9A;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    h3, h4 {
+      color: #6A1B9A;
+      margin-top: 10px;
+    }
+
+    marquee {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    img {
+      margin: 10px;
+      border-radius: 12px;
+      border: 3px solid #6A1B9A;
+      max-width: 250px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 30px auto;
+      max-width: 800px;
+    }
+
+    .menu-item {
+      background: #FFF;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .price-tag {
+      font-size: 26px;
+      font-weight: bold;
+      color: #D4AF37;
+      margin-top: 20px;
+    }
+
+    .delivery {
+      color: white;
+      font-size: 18px;
+      margin-top: 15px;
+      background-color: #8B4513;
+      padding: 12px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: blue;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #00994d;
+    }
+
+    .order-btn {
+      margin: 40px 0;
+    }
+
+    /* Scroll buttons */
+    .scroll-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #c0392b;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .scroll-btn:hover {
+      background: #922b21;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h2><marquee>We Welcome You To An Atmosphere of Great Taste</marquee></h2>
+  </header>
+
+  <h1>This is Flavour United, where we serve amazing Northern dishes</h1>
+
+  <h4>YOUR QUESTION!!?? What's on your menu</h4> 
+  <h4>Well, we got you covered with:</h4>
+
+  <h1><strong>MENU</strong></h1>
+
+  <div class="menu">
+    <div class="menu-item"><strong>Tuwo Shinkafa:</strong> Mashed rice served with soup</div>
+    <div class="menu-item"><strong>Tuwo Masara:</strong> Maize flour swallow (like eba)</div>
+    <div class="menu-item"><strong>Miyan Kuka:</strong> Baobab leaf soup</div>
+    <div class="menu-item"><strong>Miyan Taushe:</strong> Pumpkin soup, rich and spicy</div>
+    <div class="menu-item"><strong>Dambu Nama:</strong> Shredded dried meat with spices</div>
+    <div class="menu-item"><strong>Kilishi:</strong> Spicy dried beef (like jerky)</div>
+  </div>
+
+  <div class="price-tag">ALL FOR ₦9,990 ONLY</div>
+  <div class="delivery">For delivery: ₦10,000 ONLY to any part of the world</div>
+
+  <div class="order-btn">
+      <a class="button" href="Main page.html">Back to Menu</a>
+  </div>
+
+  <!-- Scroll buttons -->
+  <button class="scroll-btn" id="scrollDown">⬇</button>
+  <button class="scroll-btn" id="scrollUp">⬆</button>
+
+  <script>
+    const scrollDown = document.getElementById("scrollDown");
+    const scrollUp = document.getElementById("scrollUp");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY < 100) {
+        scrollDown.style.display = "block";
+        scrollUp.style.display = "none";
+      } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+        scrollDown.style.display = "none";
+        scrollUp.style.display = "block";
+      } else {
+        scrollDown.style.display = "none";
+        scrollUp.style.display = "block";
+      }
+    });
+
+    scrollDown.addEventListener("click", () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    });
+
+    scrollUp.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

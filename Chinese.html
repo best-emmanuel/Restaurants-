@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device width,initial-scale=1.0" />
+  <title>Chinese Restaurant</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      color: #2c2c2c;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    marquee {
+      color: white;
+      font-size: 22px;
+      margin: 0;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 12px;
+      font-weight: bold;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    h4 {
+      margin: 15px 0;
+      font-size: 22px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .menu-section, .delivery {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 600px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .menu-section h2 {
+      color: #ff5e62;
+      margin-bottom: 15px;
+    }
+
+    ul.menu {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul.menu li {
+      margin: 12px 0;
+      padding: 10px;
+      font-size: 17px;
+      border-left: 5px solid #ff5e62;
+      background: #fff5f5;
+      border-radius: 8px;
+    }
+
+    .delivery h3 {
+      color: #ff5e62;
+      margin-bottom: 5px;
+    }
+
+    .delivery h4 {
+      color: #d35400;
+      margin-top: 8px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #ff5e62, #ff9966);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    a.button:hover {
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      transform: scale(1.05);
+    }
+
+    .order-btn {
+      display: block;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    /* Scroll-to-top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff5e62;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+
+    #scrollTopBtn:hover {
+      background: #ff9966;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <marquee>Welcome to my Chinese Restaurant</marquee>
+  <h4>An hungry Man is an Angry Man</h4>
+
+  <div class="menu-section">
+    <h2>Menu</h2>
+    <ul class="menu">
+      <li>Fried Rice 炒饭 – ¥10 – ¥25 [₦3,500]</li>
+      <li>Dumplings (4–6 pieces) 饺子 (jiǎo zi) – ¥30 [₦4,000]</li>
+      <li>Sweet and Sour Pork 糖醋里脊 – ₦5,500</li>
+      <li>Spring Rolls (2–4 pieces) 春卷 (chūn juǎn) – ₦1,000 – ₦2,500</li>
+      <li>Hot Pot (per person) 火锅 (huǒ guō) – ₦7,000 – ₦15,000</li>
+      <li>Peking Duck (half/full) 北京烤鸭 – ₦8,000 – ₦18,000</li>
+    </ul>
+  </div>
+
+  <div class="delivery">
+    <h3>DELIVERY</h3>
+    <p>Terms and conditions apply.</p>
+    <h4>Delivery Amount: ₦10,000</h4>
+    <p>For any location in any part of the world.</p>
+  </div>
+
+  <div class="order-btn">
+    <a class="button" href="Main page.html">← Back to Menu</a>
+  </div>
+
+  <!-- Scroll-to-top Button -->
+  <button onclick="scrollToTop()" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>European Restaurant</title>
+  <style>
+    body {  
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: linear-gradient(135deg, #f3e5ab, #e6b980, #d57eeb);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      line-height: 1.6;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-top: 20px;
+      font-size: 32px;
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    h3 {
+      color: #2c3e50;
+      background-color: #fdfdfd;
+      padding: 10px;
+      margin: 10px auto;
+      width: fit-content;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h4 {
+      color: #fff;
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
+      padding: 12px;
+      border-radius: 6px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    marquee {
+      color: white;
+      font-size: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 12px;
+      font-weight: bold;
+    }
+    
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    a.button:hover {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      transform: scale(1.05);
+    }
+
+    .order-btn {
+      display: block;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    /* Scroll-to-top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
+      color: white;
+      border: none;
+      outline: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    #scrollTopBtn:hover {
+      background: #922b21;
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body>
+
+  <marquee>✨ Welcome to An Atmosphere of Enticing Meals ✨</marquee>
+
+  <img src="European.jpg" alt="European" width="220" style="margin-top:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+  
+  <h3>
+    We welcome you to a lifetime experience. Relax and enjoy <br>
+    mouth-watering recipes crafted by chefs from across Europe. <br>
+    From traditional delicacies to modern twists, every dish is prepared with love and passion.
+  </h3>
+  
+  <h2>Our Special Menu</h2>
+  <h3><li>Chicken Kabobs – A smoky grilled delight with Mediterranean spices</li></h3>
+  <h3><li>Shawarma – Tender, juicy wraps with a European twist</li></h3> 
+  <h3><li>French Fries – Golden, crispy, and perfectly seasoned</li></h3> 
+  <h3><li>Pizza – Wood-fired, cheesy goodness in every bite</li></h3> 
+  <h3><li>Hamburger – Juicy beef patty with fresh veggies and sauce</li></h3> 
+  
+  <h4>
+    Place your order anytime through our order form on the first page. <br>
+    DELIVERY CHARGES: ₦5679 <br>
+    Each meal comes with a fixed price of $100 <br>
+    🍷 Complimentary wine is served with every meal.
+  </h4>
+
+  <ul>
+    <marquee direction="left" scrollamount="5">
+      <img src="eye1.jpg" alt="Chicken Kabobs" width="150" style="margin:10px; border-radius:8px;">
+      <img src="eye2.jpg" alt="Shawarma" width="150" style="margin:10px; border-radius:8px;">
+      <img src="eye6.jpg" alt="French Fries" width="150" style="margin:10px; border-radius:8px;">
+      <img src="eye5.jpg" alt="Pizza" width="200" style="margin:10px; border-radius:8px;">
+      <img src="eye4.jpg" alt="Hamburger" width="200" style="margin:10px; border-radius:8px;">
+    </marquee>
+  </ul>
+
+  <div class="order-btn">
+    <a class="button" href="Main page.html">← Back to Menu</a>
+  </div>
+
+  <!-- Scroll-to-top button -->
+  <button onclick="scrollToTop()" id="scrollTopBtn">↑</button>
+
+  <script>
+    let scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
